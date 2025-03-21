@@ -4,8 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
+    <form class="email-form">
+        <div class="form-group">
+            <label for="destinatarios">Destinatarios</label>
+            <input type="text" id="destinatarios" name="destinatarios">
+        </div>
+        <div class="form-group">
+            <label for="asunto">Asunto</label>
+            <input type="text" id="asunto" name="asunto">
+        </div>
+        <div class="toolbar">
+            <button type="button" onclick="formatText('bold')">B</button>
+            <button type="button" onclick="formatText('italic')"><i>I</i></button>
+            <button type="button" onclick="formatText('underline')"><u>U</u></button>
+            <input type="color" id="colorPicker" onchange="changeColor(this.value)">
+            <select id="fontPicker" onchange="changeFont(this.value)">
+                <option value="Arial">Arial</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <select id="fontSizePicker" onchange="changeFontSize(this.value)">
+                <option value="12px">12px</option>
+                <option value="16px">16px</option>
+                <option value="20px">20px</option>
+            </select>
+            <button type="button" onclick="justifyText('left')">Left</button>
+            <button type="button" onclick="justifyText('center')">Center</button>
+            <button type="button" onclick="justifyText('right')">Right</button>
+        </div>
+        <div class="form-group">
+            <div id="mensaje" name="mensaje" contenteditable="true" class="editable-div"></div>
+        </div>
+        <div class="form-group">
+            <button type="submit">Enviar</button>
+        </div>
+    </form>
+    <script src="script.js"></script>
 </body>
 </html>
